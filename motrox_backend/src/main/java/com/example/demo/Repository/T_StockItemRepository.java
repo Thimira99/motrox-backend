@@ -1,5 +1,11 @@
 package com.example.demo.Repository;
 
-public interface T_StockItemRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.Model.T_StockItem;
+
+@Repository
+public interface T_StockItemRepository extends JpaRepository<T_StockItem,String >{
 
 }
