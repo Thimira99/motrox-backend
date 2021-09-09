@@ -15,11 +15,11 @@ import com.example.demo.Repository.N_VehicleRepository;
 public class N_VehicleController {
 
 	@Autowired
-	private N_VehicleRepository n_VehicleRepository;
+	private N_VehicleRepository vehicleRepository;
 	
 	//get all vehicles
 	@GetMapping("/vehicle")
 	public List<N_Vehicle> getAllVehicles(){
-		return n_VehicleRepository.findAll();
+		return vehicleRepository.findAll();
 	}
 }

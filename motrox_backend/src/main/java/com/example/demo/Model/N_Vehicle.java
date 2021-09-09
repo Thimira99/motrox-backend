@@ -68,8 +68,8 @@ public class N_Vehicle {
 		super();
 		this.nameOfTheOwner = nameOfTheOwner;
 		this.yearOfManufacture = yearOfManufacture;
-		chassisNo = chassisNo;
-		engineNo = engineNo;
+		this.chassisNo = chassisNo;
+		this.engineNo = engineNo;
 		this.seatingCapacity = seatingCapacity;
 		this.make = make;
 		this.model = model;
@@ -102,13 +102,13 @@ public class N_Vehicle {
 		return chassisNo;
 	}
 	public void setChassisNo(String chassisNo) {
-		chassisNo = chassisNo;
+		this.chassisNo = chassisNo;
 	}
 	public String getEngineNo() {
 		return engineNo;
 	}
 	public void setEngineNo(String engineNo) {
-		engineNo = engineNo;
+		this.engineNo = engineNo;
 	}
 	public String getSeatingCapacity() {
 		return seatingCapacity;
@@ -164,6 +164,8 @@ public class N_Vehicle {
 	public void setColour(String colour) {
 		this.colour = colour;
 	}
+	
+	
 	
 	
 	

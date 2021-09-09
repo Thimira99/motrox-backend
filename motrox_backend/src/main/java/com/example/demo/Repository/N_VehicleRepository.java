@@ -8,4 +8,6 @@ import com.example.demo.Model.N_Vehicle;
 @Repository
 public interface N_VehicleRepository extends JpaRepository<N_Vehicle, Long> {
 
+	
+	
 }
