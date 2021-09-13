@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +24,12 @@ public class D_EmployeeController {
 	public List<D_Employee> getAllEmployees(){
 		return employeeRepository.findAll();
 	}
+	
+	//create employee rest api
+		@PostMapping("/employees")
+		public D_Employee createEmployee(@RequestBody D_Employee d_Employee) {
+			return employeeRepository.save(d_Employee);
+		}
+	
 
 }
