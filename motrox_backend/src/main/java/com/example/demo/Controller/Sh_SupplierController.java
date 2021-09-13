@@ -3,12 +3,15 @@ package com.example.demo.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.Exception.ResourceNotFoundException;
 import com.example.demo.Model.Sh_Supplier;
 import com.example.demo.Repository.Sh_SupplierRepository;
 
@@ -31,6 +34,15 @@ public class Sh_SupplierController {
 	public Sh_Supplier createSupplier(@RequestBody Sh_Supplier sh_Supplier) {
 		return supplierRepository.save(sh_Supplier);
 	}
+	
+	// get supplier by id rest api
+	@GetMapping("/suppliers/{id}")
+	public ResponseEntity<Sh_Supplier> getSupplierById(@PathVariable Long id) {
+			
+		Sh_Supplier sh_Supplier = supplierRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Supplier not exist with id :" + id));
+		return ResponseEntity.ok(sh_Supplier);
+			
+		}
 
 	
 
