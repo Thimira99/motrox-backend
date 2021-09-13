@@ -5,12 +5,15 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.Exception.ResourceNotFoundException;
 import com.example.demo.Model.H_Customer;
 import com.example.demo.Repository.H_CustomerRepository;
 
@@ -34,6 +37,14 @@ public class H_CustomerController {
 			return h_CustomerRepository.save(h_Customer);
 			
 			
+		}
+		//get customer by id rest api
+		@GetMapping("/customers/{id}")
+		public ResponseEntity <H_Customer>  getCustomerById(@PathVariable Long id) {
+			
+			H_Customer h_Customer = h_CustomerRepository.findById(id)
+					.orElseThrow(() -> new ResourceNotFoundException("Customer not exit with id :" + id));
+			return ResponseEntity.ok(h_Customer);
 		}
 		
 }
