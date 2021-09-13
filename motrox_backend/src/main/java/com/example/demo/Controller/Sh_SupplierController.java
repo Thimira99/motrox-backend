@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,8 +42,24 @@ public class Sh_SupplierController {
 			
 		Sh_Supplier sh_Supplier = supplierRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Supplier not exist with id :" + id));
 		return ResponseEntity.ok(sh_Supplier);
+	}
+	
+	//update supplier rest api
+	@PutMapping("/suppliers/{id}")
+	public ResponseEntity<Sh_Supplier> updateSupplier(@PathVariable Long id, @RequestBody Sh_Supplier supplierDetails){
 			
-		}
+			Sh_Supplier sh_Supplier = supplierRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Supplier not exist with id :" + id));
+			sh_Supplier.setSupplierName(supplierDetails.getSupplierName());
+			sh_Supplier.setSupplierPhone(supplierDetails.getSupplierPhone());
+			sh_Supplier.setSupplierAddress(supplierDetails.getSupplierAddress());
+			sh_Supplier.setSupplierEmail(supplierDetails.getSupplierEmail());
+			sh_Supplier.setItemDescription(supplierDetails.getItemDescription());
+			sh_Supplier.setSupplierJoinDate(supplierDetails.getSupplierJoinDate());
+			sh_Supplier.setPaymentMethod(supplierDetails.getPaymentMethod());
+			
+			Sh_Supplier updatedSupplier = supplierRepository.save(sh_Supplier);
+			return ResponseEntity.ok(updatedSupplier);
+	}
 
 	
 
