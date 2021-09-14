@@ -14,7 +14,7 @@ import com.example.demo.Exception.ResourceNotFoundException;
 import com.example.demo.Model.S_BillItems;
 import com.example.demo.Repository.S_BillItemsRepository;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1")
 public class S_BillItemsController {
