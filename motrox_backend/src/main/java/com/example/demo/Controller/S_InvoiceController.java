@@ -19,8 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.Exception.ResourceNotFoundException;
 import com.example.demo.Model.S_Invoice;
 import com.example.demo.Repository.S_InvoiceRepository;
+import com.example.demo.Response.S_BillIdResponse;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1")
 public class S_InvoiceController {
@@ -95,6 +96,9 @@ public class S_InvoiceController {
 		return ResponseEntity.ok(response);
 		
 	}
+	
+	
+	
 	
 	
 }
