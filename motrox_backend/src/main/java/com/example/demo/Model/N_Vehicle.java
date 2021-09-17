@@ -55,7 +55,8 @@ public class N_Vehicle {
 	@Column(name = "Colour")
 	private String colour;
 	
-	
+	@Column(name = "RegistrationNo")
+	private String registrationNo;
 	
 	public N_Vehicle() {
 		
@@ -64,12 +65,12 @@ public class N_Vehicle {
 	
 	public N_Vehicle(String nameOfTheOwner, String yearOfManufacture, String chassisNo, String engineNo,
 			String seatingCapacity, String make, String model, String typeOfFuel, String typeOfBody,
-			String cylinderCapacity, String dateOfRegistration, String classOfVehicle, String colour) {
+			String cylinderCapacity, String dateOfRegistration, String classOfVehicle, String colour, String registrationNo) {
 		super();
 		this.nameOfTheOwner = nameOfTheOwner;
 		this.yearOfManufacture = yearOfManufacture;
-		chassisNo = chassisNo;
-		engineNo = engineNo;
+		this.chassisNo = chassisNo;
+		this.engineNo = engineNo;
 		this.seatingCapacity = seatingCapacity;
 		this.make = make;
 		this.model = model;
@@ -79,6 +80,16 @@ public class N_Vehicle {
 		this.dateOfRegistration = dateOfRegistration;
 		this.classOfVehicle = classOfVehicle;
 		this.colour = colour;
+		this.registrationNo = registrationNo;
+	}
+	
+	
+	
+	public String getRegistrationNo() {
+		return registrationNo;
+	}
+	public void setRegistrationNo(String registrationNo) {
+		this.registrationNo = registrationNo;
 	}
 	public long getVehicleId() {
 		return vehicleId;
@@ -102,13 +113,13 @@ public class N_Vehicle {
 		return chassisNo;
 	}
 	public void setChassisNo(String chassisNo) {
-		chassisNo = chassisNo;
+		this.chassisNo = chassisNo;
 	}
 	public String getEngineNo() {
 		return engineNo;
 	}
 	public void setEngineNo(String engineNo) {
-		engineNo = engineNo;
+		this.engineNo = engineNo;
 	}
 	public String getSeatingCapacity() {
 		return seatingCapacity;

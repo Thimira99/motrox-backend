@@ -7,16 +7,28 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Exception.ResourceNotFoundException;
+
+import com.example.demo.Model.T_StockItem;
+import com.example.demo.Repository.T_StockItemRepository;
+
+
+
+import com.example.demo.Model.S_Invoice;
 import com.example.demo.Model.T_StockItem;
 import com.example.demo.Repository.T_StockItemRepository;
 
@@ -50,6 +62,7 @@ public class T_StockController {
 		return ResponseEntity.ok(t_stockitem);
 	}
 	
+
 	//update stock item
 	
 	@PutMapping("/stockItems/{itemcode}")
@@ -85,3 +98,8 @@ public class T_StockController {
 		
 	}
 }
+	
+	
+	
+}
+
