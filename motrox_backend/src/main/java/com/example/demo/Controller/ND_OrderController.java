@@ -20,7 +20,7 @@ import com.example.demo.Exception.ResourceNotFoundException;
 import com.example.demo.Model.ND_Order;
 import com.example.demo.Repository.ND_OrderRepository;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/")
 public class ND_OrderController {
