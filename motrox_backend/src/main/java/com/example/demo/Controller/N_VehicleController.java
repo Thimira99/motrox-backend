@@ -21,6 +21,7 @@ import com.example.demo.Model.N_Vehicle;
 import com.example.demo.Repository.N_VehicleRepository;
 
 @CrossOrigin(origins = "http://localhost:3000")
+
 @RestController
 @RequestMapping("/api/v1/")
 public class N_VehicleController {
