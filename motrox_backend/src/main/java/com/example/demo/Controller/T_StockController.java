@@ -29,7 +29,21 @@ public class T_StockController {
 		return stockRepository.findAll();
 	}
 	
+	@GetMapping("/stockItems/{id}")
+	public ResponseEntity<T_StockItem> getitemById(@PathVariable String id) {
+		T_StockItem S_InvoiceObj = stockRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("invoice not fount"));
+		return ResponseEntity.ok(S_InvoiceObj);
+	}
+	
+	
+	//sukitha did this .....
+	
+	//@GetMapping("/stockItems/{Item_Name}")
+	//public List< T_StockItem> getitemByString(@PathVariable String Item_Name) {
+	//return  stockRepository.findT_StockItems(Item_Name);}
+		
 	
 	
 	
+
 }
