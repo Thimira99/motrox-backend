@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,11 +25,6 @@ import com.example.demo.Exception.ResourceNotFoundException;
 import com.example.demo.Model.T_StockItem;
 import com.example.demo.Repository.T_StockItemRepository;
 
-
-
-import com.example.demo.Model.S_Invoice;
-import com.example.demo.Model.T_StockItem;
-import com.example.demo.Repository.T_StockItemRepository;
 
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -121,6 +115,5 @@ public class T_StockController {
 }
 	
 	
-	
-}
+
 

@@ -1,8 +1,8 @@
-package com.example.demo.Service;
+//package com.example.demo.Service;
 
-public class TrialService {
-	private int firstandlast;
-	private String email;
-	private String anushi;
-	private String num;
-}
+//public class TrialService {
+	//private int firstandlast;
+	//private String email;
+	//private String anushi;
+	//private String num;
+//}
