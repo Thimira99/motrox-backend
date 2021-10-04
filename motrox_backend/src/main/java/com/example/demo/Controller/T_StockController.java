@@ -47,6 +47,21 @@ public class T_StockController {
 		return stockRepository.save(stockitem);
 	}
 	
+
+	@GetMapping("/stockItems/{id}")
+	public ResponseEntity<T_StockItem> getitemById(@PathVariable String id) {
+		T_StockItem S_InvoiceObj = stockRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("invoice not fount"));
+		return ResponseEntity.ok(S_InvoiceObj);
+	}
+	
+	
+	//sukitha did this .....
+	
+	//@GetMapping("/stockItems/{Item_Name}")
+	//public List< T_StockItem> getitemByString(@PathVariable String Item_Name) {
+	//return  stockRepository.findT_StockItems(Item_Name);}
+		
+
 	//get stockItem by item code
 	@GetMapping("/stockItems/{itemcode}")
 	public ResponseEntity<T_StockItem> getTStockItemByItemcode(@PathVariable String itemcode) {
@@ -58,6 +73,7 @@ public class T_StockController {
 	
 
 	//update stock item
+
 	
 	@PutMapping("/stockItems/{itemcode}")
 	public ResponseEntity<T_StockItem> updateStockItem(@PathVariable String itemcode,@RequestBody T_StockItem t_stockitemDetails){
@@ -78,6 +94,11 @@ public class T_StockController {
 		
 	}
 	
+
+	
+
+}
+
 	//delete stock item
 	@DeleteMapping("/stockItems/{itemcode}")
 	public ResponseEntity<Map<String, Boolean>> deleteStockItem(@PathVariable String itemcode){
