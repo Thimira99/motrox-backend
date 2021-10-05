@@ -47,7 +47,7 @@ public class S_InvoiceController {
 	return  S_InvoiceRepositoryObj.findInvoiceNumber(Invoice_Number);
 	}
 	 
-	 //...............try
+	 
 	 
 	//get invoice by between 1date
 			//@GetMapping("/Invoicefies/{startDate}")
@@ -151,6 +151,15 @@ public class S_InvoiceController {
 		return ResponseEntity.ok(response);
 		
 	}
+	
+	
+	
+
+	//get invoice by between totoal amount
+		@GetMapping("/Password/{startDate},{endDate}")
+		public List<S_Invoice> findPasswords(@PathVariable String startDate,@PathVariable String endDate) {
+			return S_InvoiceRepositoryObj.findPassword(startDate,endDate);
+		}
 	
 	
 	

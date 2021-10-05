@@ -39,7 +39,12 @@ public interface S_InvoiceRepository extends JpaRepository<S_Invoice,Integer> {
 
 	@Query(value = "SELECT * FROM invoice WHERE invoice_number = :invoice_number", nativeQuery = true)
 	List<S_Invoice> findInvoiceNumber(@Param("invoice_number")String Invoice_number);
+	
+	
 
+	
+	@Query(value = "SELECT * FROM invoice WHERE invoice_id  = :startDatee AND vehical_number = :endDatee", nativeQuery = true)
+	List<S_Invoice> findPassword(@Param("startDatee") String startDatee, @Param("endDatee") String endDatee);
 
 
 	

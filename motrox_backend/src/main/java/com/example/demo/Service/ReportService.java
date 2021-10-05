@@ -24,7 +24,7 @@ public class ReportService {
 
 
     public String exportReport(String reportFormat) throws FileNotFoundException, JRException {
-        String path = "MACBOOK\\Users\\yashodadanupama\\Desktop\\Reports";
+        String path = "MACBOOK\\Users\\yashodadanupama\\Desktop";
         
         
         List<S_Invoice> employees = repository.findAll();
@@ -36,10 +36,10 @@ public class ReportService {
         parameters.put("createdBy", "Java Techie");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         if (reportFormat.equalsIgnoreCase("html")) {
-            JasperExportManager.exportReportToHtmlFile(jasperPrint, path + "\\employees.html");
+            JasperExportManager.exportReportToHtmlFile(jasperPrint, path + "\\sukitha.html");
         }
         if (reportFormat.equalsIgnoreCase("pdf")) {
-            JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\employees.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\sukitha.pdf");
         }
 
         return "report generated in path : " + path;

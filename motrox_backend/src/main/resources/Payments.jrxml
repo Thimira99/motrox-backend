@@ -82,7 +82,7 @@ Fax : 2622444]]></text>
 				<text><![CDATA[Vehi Number]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="320" y="0" width="110" height="40" forecolor="#000000" backcolor="#4776A8" uuid="6ff62d85-5778-45be-b6e0-c76d02081fac">
+				<reportElement mode="Opaque" x="320" y="0" width="100" height="40" forecolor="#000000" backcolor="#4776A8" uuid="6ff62d85-5778-45be-b6e0-c76d02081fac">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e2c072b-3073-4534-b518-67545239a9ca"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -92,7 +92,7 @@ Fax : 2622444]]></text>
 				<text><![CDATA[Date]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="430" y="0" width="115" height="40" forecolor="#000000" backcolor="#4776A8" uuid="a952dad3-6a96-43c8-b412-62e2bab34092">
+				<reportElement mode="Opaque" x="420" y="0" width="125" height="40" forecolor="#000000" backcolor="#4776A8" uuid="a952dad3-6a96-43c8-b412-62e2bab34092">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fdeba8e0-1912-49a9-9614-835b112cc97f"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -133,7 +133,7 @@ Fax : 2622444]]></text>
 				<textFieldExpression><![CDATA[$F{vehicalNumber}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="300" y="-10" width="140" height="32" uuid="4030bcc8-ed10-4910-8bec-44bc0a078445">
+				<reportElement x="300" y="-10" width="120" height="32" uuid="4030bcc8-ed10-4910-8bec-44bc0a078445">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fdeba8e0-1912-49a9-9614-835b112cc97f"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -142,13 +142,13 @@ Fax : 2622444]]></text>
 				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="430" y="-10" width="114" height="32" uuid="a07f97f3-bc3a-4c0b-9149-b32cc85c98cf">
+				<reportElement x="420" y="-10" width="124" height="32" uuid="a07f97f3-bc3a-4c0b-9149-b32cc85c98cf">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba29ff0a-99fe-4adf-9661-687ca166f842"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Rs."+$F{totalAmount}+".00"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Rs."+$F{totalAmount}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

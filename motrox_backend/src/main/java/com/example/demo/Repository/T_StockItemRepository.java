@@ -16,10 +16,10 @@ public interface T_StockItemRepository extends JpaRepository<T_StockItem,String 
 
    
     
+	//sukitha didi this.......
 	
-	
-	@Query(value = "SELECT * FROM stock WHERE item_name = :Item_Name", nativeQuery = true)
-	List<T_StockItem> findT_StockItems(@Param("Item_Name")String Item_Name);
+	//@Query(value = "SELECT * FROM stock WHERE item_name = :Item_Name", nativeQuery = true)
+	//<T_StockItem> findT_StockItems(@Param("Item_Name")String Item_Name);
 
 	
 	

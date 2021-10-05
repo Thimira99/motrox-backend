@@ -1,11 +1,13 @@
 package com.example.demo.Controller;
 
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,15 +20,38 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Exception.ResourceNotFoundException;
 import com.example.demo.Model.ND_Order;
-import com.example.demo.Repository.ND_OrderRepository;
 
-@CrossOrigin(origins = "http://localhost:8080")
+import com.example.demo.Repository.ND_OrderRepository;
+import com.example.demo.Service.NikilReport;
+
+
+import net.sf.jasperreports.engine.JRException;
+
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/")
+
+
 public class ND_OrderController {
+	
+	
 	
 	@Autowired
 	private ND_OrderRepository ND_OrderRepository;
+	
+	@Autowired
+	   private NikilReport service1;
+	
+	
+	 
+	 
+	 
+	 
+	 @GetMapping("/Nikilreport/{format}")
+	    public String generateReport(@PathVariable String format) throws FileNotFoundException, JRException {
+	        return service1.exportReport(format);
+	    }
+	
 	
 	// get all orders
 	
@@ -81,6 +106,19 @@ public class ND_OrderController {
 		response.put("deleted", Boolean.TRUE);
 		return ResponseEntity.ok(response);
 	}
+	
+	
+	
+	 
+    @GetMapping("/ordersbysup/{supplier}")
+    public List<ND_Order> getsupplierbyName(@PathVariable String supplier) {
+	return  ND_OrderRepository.findbusuppliername(supplier);
+	}
+	 
+	
+	
+	
+	
 	
 
 }
